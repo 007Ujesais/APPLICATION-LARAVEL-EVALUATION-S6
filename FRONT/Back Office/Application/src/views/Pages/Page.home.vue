@@ -4,7 +4,7 @@
         <section class="hero">
             <div class="hero-content">
                 <h1 class="hero-title">Hi there, Isaac &nbsp; &nbsp; &nbsp; Welcome to My App</h1>
-                <p class="hero-subtitle">Découvrez une expérience unique avec nos fonctionnalités avancées.</p>
+                <p class="hero-subtitle">Discover a unique experience with our advanced features.</p>
             </div>
         </section>
     </div>
@@ -43,7 +43,6 @@ const goToFeatures = () => {
 
 .hero-title {
     font-size: 5.5rem;
-    height: 17vh;
     font-weight: bold;
     margin-bottom: 10px;
     background: linear-gradient(135deg, var(--p-primary-color), var(--p-primary-100));

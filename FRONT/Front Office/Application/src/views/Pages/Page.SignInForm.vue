@@ -1,14 +1,16 @@
 <template>
     <div class="signin-form">
         <h2>Sign In</h2>
-        <div class="form-group">
+        <FloatLabel variant="on">
             <label for="username">Username</label>
             <InputText id="username" v-model="username" />
-        </div>
-        <div class="form-group">
-            <label for="password">Password</label>
+        </FloatLabel>
+
+        <FloatLabel variant="on">
             <Password id="password" v-model="password" />
-        </div>
+            <label for="password">Password</label>
+        </FloatLabel>
+        
         <Button label="Sign In" @click="signIn" />
     </div>
 </template>

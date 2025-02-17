@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "BHBoMouTLT1Nng9OVRv1TZyZQ4JK2/M4biRNgS8H1JA+W6o5i+wGBSNUFtg68LpY+rrZvaEqFv2lA35OqyOccQ==",
+  "dgSpecHash": "fHp8kEx8KY0TjJTMoG7ELRC/i0qMNeQM9Dimi6+R/hggXKYpG+4r50dhVrE5b2Y4fOJ8vjtUR02lU/IjM4Gg5w==",
   "success": true,
-  "projectFilePath": "D:\\DOC\\Documents\\FIANARANA\\FINAL TEST EVALUATION\\WORK\\APPLICATION\\BACK\\Backend\\Backend.csproj",
+  "projectFilePath": "E:\\HOUSE\\WORK TIME\\STUDY\\FINAL TEST EVALUATION\\WORK\\APPLICATION\\BACK\\Backend\\Backend.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ujesa\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\ujesa\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",

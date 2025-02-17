@@ -11354,11 +11354,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\DOC\\Documents\\FIANARANA\\FINAL TEST EVALUATION\\WORK\\APPLICATION\\BACK\\Backend\\Backend.csproj",
+      "projectUniqueName": "E:\\HOUSE\\WORK TIME\\STUDY\\FINAL TEST EVALUATION\\WORK\\APPLICATION\\BACK\\Backend\\Backend.csproj",
       "projectName": "Backend",
-      "projectPath": "D:\\DOC\\Documents\\FIANARANA\\FINAL TEST EVALUATION\\WORK\\APPLICATION\\BACK\\Backend\\Backend.csproj",
+      "projectPath": "E:\\HOUSE\\WORK TIME\\STUDY\\FINAL TEST EVALUATION\\WORK\\APPLICATION\\BACK\\Backend\\Backend.csproj",
       "packagesPath": "C:\\Users\\ujesa\\.nuget\\packages\\",
-      "outputPath": "D:\\DOC\\Documents\\FIANARANA\\FINAL TEST EVALUATION\\WORK\\APPLICATION\\BACK\\Backend\\obj\\",
+      "outputPath": "E:\\HOUSE\\WORK TIME\\STUDY\\FINAL TEST EVALUATION\\WORK\\APPLICATION\\BACK\\Backend\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ujesa\\AppData\\Roaming\\NuGet\\NuGet.Config",
