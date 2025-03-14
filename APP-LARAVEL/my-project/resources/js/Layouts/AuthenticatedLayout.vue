@@ -29,7 +29,7 @@ const userMenu = ref([
     <div>
         <div class="min-h-screen bg-dots bg-center selection:bg-gray-300 selection:text-black">
             <nav class="h-14 fixed top-[-1rem] w-full z-40">
-                <div class="mx-auto flex justify-center flex-col px-4 sm:px-6">
+                <div class="bg-perso mx-auto flex justify-center flex-col px-4 sm:px-6">
                     <Link :href="'/'" class="flex relative top-[2.9rem] items-center justify-center">
                                     <ApplicationLogo class="h-9 w-auto text-gray-800" />
                     </Link>
@@ -73,14 +73,14 @@ const userMenu = ref([
             </nav>
 
             <!-- Page Heading -->
-            <header v-if="$slots.header">
+            <header class="fixed w-full h-full top-14 left-0 p-5" v-if="$slots.header">
                 <div class="max-w-7xl flex justify-center mx-auto py-1 px-4 sm:px-6 lg:px-8">
                     <slot name="header" />
                 </div>
             </header>
 
             <!-- Page Content -->
-            <main class="fixed w-full h-full top-0 left-0">
+            <main class="fixed w-full h-full top-12 left-0 p-5">
                 <ScrollPanel
                         style="width: 100%; height: 100%"
                         :dt="{
@@ -98,17 +98,11 @@ const userMenu = ref([
 
 <style lang="scss" scoped>
 .bg-perso {
-    background: var(--p-content-background);
-    backdrop-filter: blur(10px);
-    border: 1px solid var(--p-content-border-color);
+    filter: invert(1);
 }
 .menu-bar {
-    filter: invert(1);
     padding: 7px 7px 7px 7px;
     border-radius: 20px;
     border: none;
-}
-.p-primary-color {
-    color: var(--p-text-color);
 }
 </style>

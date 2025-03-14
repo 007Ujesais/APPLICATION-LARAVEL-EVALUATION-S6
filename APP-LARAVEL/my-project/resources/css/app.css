@@ -27,3 +27,20 @@
     pointer-events: none;
     z-index: -1;
 }
+
+.p-scrollpanel-bar {
+    background: none !important;
+    position: relative;
+}
+
+.p-scrollpanel-bar::before {
+    content: "";
+    background: currentColor;
+    width: 8px !important;
+    height: 30px !important;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%); /* Centrer + incliner */
+    border-radius: 5px; /* Arrondi pour une accroche */
+}
