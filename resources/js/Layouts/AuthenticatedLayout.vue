@@ -26,7 +26,7 @@ const userMenu = ref([
 </script>
 
 <template>
-    <div class="">
+    <div>
         <div class="min-h-screen bg-dots bg-center selection:bg-gray-300 selection:text-black">
             <nav class="h-14 fixed top-[-1rem] w-full z-40">
                 <div class="mx-auto flex justify-center flex-col px-4 sm:px-6">
@@ -103,7 +103,7 @@ const userMenu = ref([
     border: 1px solid var(--p-content-border-color);
 }
 .menu-bar {
-    // background: none;
+    filter: invert(1);
     padding: 7px 7px 7px 7px;
     border-radius: 20px;
     border: none;
