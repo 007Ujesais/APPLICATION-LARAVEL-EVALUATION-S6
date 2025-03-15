@@ -1,7 +1,5 @@
 import { definePreset } from '@primevue/themes';
         import Aura from '@primevue/themes/aura';
-        import Lara from '@primevue/themes/lara';
-
 
         const MyPreset = definePreset(Aura, {
             primitive: {
@@ -664,12 +662,12 @@ import { definePreset } from '@primevue/themes';
         const Noir = definePreset(Aura, {
             primitive: {
                 borderRadius: {
-                    none: "0",
-                    xs: "8px",
-                    sm: "10px",
-                    md: "12px",
-                    lg: "18px",
-                    xl: "26px"
+                    none: "1px",
+                    xs: "7px",
+                    sm: "9px",
+                    md: "11px",
+                    lg: "17px",
+                    xl: "21px"
                 },
                 emerald: {
                     50: "#f3fbf9",
