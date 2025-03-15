@@ -1,5 +1,5 @@
 <header class="sticky top-0 z-50 flex w-full border-b border-gray-200 bg-white dark:border-gray-800 dark:bg-gray-900">
-    <div class="flex w-full items-center justify-between px-6 py-4">
+    <div class="flex w-full items-center justify-between px-4 py-2">
         <!-- Bouton Menu Mobile -->
         <button id="menu-btn" class="lg:hidden p-2 rounded-lg text-gray-500 dark:text-gray-400">
             <i class="pi pi-bars text-xl"></i>
@@ -12,15 +12,22 @@
 
         <!-- Boutons -->
         <div class="flex items-center gap-4">
-          <!-- Dark Mode Toggler -->
-          <button class="hover:text-dark-900 relative flex h-11 w-11 items-center justify-center rounded-full border border-gray-200 bg-white text-gray-500 transition-colors hover:bg-gray-100 hover:text-gray-700 dark:border-gray-800 dark:bg-gray-900 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-white" onclick="toggleDarkMode()">
-            <i class="pi pi-moon" style="font-size: 1rem"></i>
-          </button>
-          <!-- Dark Mode Toggler -->
+
+          <!-- Shearch Menu Area -->
+          <div class=" bg-gray-300 dark:bg-slate-950 flex items-center content-center justify-center rounded-lg pl-3">
+            <div class="w-7 shrink-0">
+                <!-- Icône de recherche -->
+                <i class="pi pi-search" aria-hidden="true"></i>
+            </div>
+            <input type="text" class="bg-transparent block border-none min-w-0 grow py-1.5 pl-1 pr-3 text-base placeholder:text-gray-400 focus:outline focus:outline-0 sm:text-sm/6 focus-visible:ring-0"
+                placeholder="Search" />
+        </div>
+        
+        <!-- Shearch Menu Area -->
 
           <!-- Notification Menu Area -->
           <div id="notification-btn" class="relative">
-            <button class="hover:text-dark-900 relative flex h-11 w-11 items-center justify-center rounded-full border border-gray-200 bg-white text-gray-500 transition-colors hover:bg-gray-100 hover:text-gray-700 dark:border-gray-800 dark:bg-gray-900 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-white" @click.prevent="dropdownOpen = ! dropdownOpen; notifying = false">
+            <button class="hover:text-dark-900 relative flex h-10 w-10 items-center justify-center rounded-full border border-gray-200 bg-white text-gray-500 transition-colors hover:bg-gray-100 hover:text-gray-700 dark:border-gray-800 dark:bg-gray-900 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-white" @click.prevent="dropdownOpen = ! dropdownOpen; notifying = false">
               <span :class="!notifying ? 'hidden' : 'flex'" class="absolute right-0 top-0.5 z-1 h-2 w-2 rounded-full bg-orange-400 flex">
                 <span class="absolute -z-1 inline-flex h-full w-full animate-ping rounded-full bg-orange-400 opacity-75"></span>
               </span>
@@ -31,9 +38,8 @@
 
             <!-- Profil -->
             <div class="relative">
-                <button id="profile-btn" class="flex items-center gap-2 p-2 rounded-lg text-gray-700 dark:text-gray-400">
-                    <span class="h-10 w-10 rounded-full bg-gray-300 dark:bg-gray-700"></span>
-                    <i class="pi pi-angle-down"></i>
+                <button id="profile-btn" class="gap-2 p-2 rounded-lg text-gray-700 dark:text-gray-400">
+                    <span class="hover:text-dark-900 relative flex h-10 w-10 items-center justify-center rounded-full border border-gray-200 bg-white text-gray-500 transition-colors hover:bg-gray-100 hover:text-gray-700 dark:border-gray-800 dark:bg-gray-900 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-white">AD</span>
                 </button>
                 
                 <!-- Profil Menu Déroulant -->
@@ -46,12 +52,18 @@
                             </a>
                         </li>
                         <li>
+                            <button class="group w-full flex items-center gap-3 rounded-lg px-3 py-2 text-theme-sm font-medium text-gray-700 hover:bg-gray-100 hover:text-gray-700 dark:text-gray-400 dark:hover:bg-white/5 dark:hover:text-gray-300" onclick="toggleDarkMode()">
+                                <i class="pi pi-moon" style="font-size: 1rem"></i>
+                            Dark mode
+                              </button>
+                        </li>
+                        <li>
                             <a href="#" class="group flex items-center gap-3 rounded-lg px-3 py-2 text-theme-sm font-medium text-gray-700 hover:bg-gray-100 hover:text-gray-700 dark:text-gray-400 dark:hover:bg-white/5 dark:hover:text-gray-300">
                                 <i class="pi pi-info-circle" style="font-size: 1rem"></i>
                             Support
                             </a>
                         </li>
-                        </ul>
+                    </ul>
                         <button class="group mt-3 flex items-center gap-3 w-full rounded-lg px-3 py-2 text-theme-sm font-medium text-gray-700 hover:bg-gray-100 hover:text-gray-700 dark:text-gray-400 dark:hover:bg-white/5 dark:hover:text-gray-300">
                             <i class="pi pi-sign-out" style="font-size: 1rem"></i>
                             <a href="{{ route('admin-Logout') }}"> Sign out</a>

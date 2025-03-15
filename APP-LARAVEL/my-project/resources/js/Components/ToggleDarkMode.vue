@@ -2,7 +2,7 @@
 import { ref, onMounted, defineExpose } from "vue";
 
 // Dark mode state
-const isDarkMode = ref(localStorage.getItem("darkMode") === "true");
+const isDarkMode = ref(localStorage.getItem("darkMode") === "true" || false);
 
 // Toggle dark mode
 const toggleDarkMode = () => {
