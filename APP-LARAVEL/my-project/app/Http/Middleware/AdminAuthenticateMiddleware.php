@@ -17,9 +17,9 @@ class AdminAuthenticateMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        if (!Session::has('admin_logged_in')) {
-            return $next($request);
+        if (Session::put('admin_logged_in')) {
+            return redirect()->route('admin'); // Redirection si non connecté
         }
-        return redirect()->route('admin'); // Redirection si non connecté
+        return $next($request);
     }
 }
