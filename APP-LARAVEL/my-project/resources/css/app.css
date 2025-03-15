@@ -41,6 +41,11 @@
     position: absolute;
     left: 50%;
     top: 50%;
-    transform: translate(-50%, -50%); /* Centrer + incliner */
-    border-radius: 5px; /* Arrondi pour une accroche */
+    transform: translate(-50%, -50%);
+    border-radius: 5px;
+}
+
+
+.p-password-input, input {
+    width: 100% !important; 
 }

@@ -1,26 +1,36 @@
 <script setup>
 import { onMounted, ref } from 'vue';
 
-defineProps(['modelValue']);
+const props = defineProps({
+    modelValue: String,
+    type: String, // Added type prop to determine input type
+});
 
-defineEmits(['update:modelValue']);
+const emit = defineEmits(['update:modelValue']);
 
 const input = ref(null);
 
 onMounted(() => {
-    if (input.value.hasAttribute('autofocus')) {
-        input.value.focus();
+    if (input.value?.$el?.hasAttribute('autofocus')) {
+        input.value.$el.focus();
     }
 });
 
-defineExpose({ focus: () => input.value.focus() });
+defineExpose({ focus: () => input.value?.$el.focus() });
 </script>
 
 <template>
-    <input
-        class="border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm text-black"
+    <Password
+        v-if="type === 'password'"
         :value="modelValue"
-        @input="$emit('update:modelValue', $event.target.value)"
+        toggleMask
+        @input="emit('update:modelValue', $event.target.value)"
+    />
+    <InputText
+        v-else
+        :value="modelValue"
+        variant="filled"
+        @input="emit('update:modelValue', $event.target.value)"
         ref="input"
     />
 </template>
