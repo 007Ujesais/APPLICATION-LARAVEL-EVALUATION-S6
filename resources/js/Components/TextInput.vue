@@ -8,6 +8,7 @@ const props = defineProps({
 
 const emit = defineEmits(['update:modelValue']);
 
+const modelValue = ref(props.modelValue);
 const input = ref(null);
 
 onMounted(() => {
@@ -22,14 +23,13 @@ defineExpose({ focus: () => input.value?.$el.focus() });
 <template>
     <Password
         v-if="type === 'password'"
-        :value="modelValue"
+        v-model="modelValue"
         toggleMask
         @input="emit('update:modelValue', $event.target.value)"
     />
     <InputText
         v-else
-        :value="modelValue"
-        variant="filled"
+        v-model="modelValue"
         @input="emit('update:modelValue', $event.target.value)"
         ref="input"
     />

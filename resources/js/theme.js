@@ -1,5 +1,7 @@
 import { definePreset } from '@primevue/themes';
         import Aura from '@primevue/themes/aura';
+        import Lara from '@primevue/themes/lara';
+
 
         const MyPreset = definePreset(Aura, {
             primitive: {
