@@ -1,9 +1,9 @@
 <?php
 
-use App\Http\Controllers\Auth\AdminAuthController;
 use App\Http\Controllers\LikeController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Auth\AdminAuthController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -28,9 +28,11 @@ Route::get('/', function () {
     ]);
 });
 
-Route::middleware('admin')->group(function () {
-    Route::get('/Dashboard', [AdminAuthController::class, 'showLoginForm'])->name('dashboard');
+Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
+    Route::get('/dashboard', [AdminAuthController::class, 'dashboard'])->name('dashboard');
+    Route::resource('products', \App\Http\Controllers\Admin\ProductController::class);
 });
+
 
 Route::middleware('auth', 'verified')->group(function () { 
     Route::get('/home', [ProductController::class, 'index'])->name('home');

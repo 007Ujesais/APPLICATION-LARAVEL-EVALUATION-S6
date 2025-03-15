@@ -1,8 +1,6 @@
 @extends('admin.Layouts.AuthenticatedLayout')
 
-@section('title')
-    <title>Admin Panel</title>
-@endsection
+@section('title', 'Admin Panel')
 
 @section('content')
     <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">

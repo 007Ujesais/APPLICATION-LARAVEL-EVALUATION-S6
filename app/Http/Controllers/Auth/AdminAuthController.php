@@ -13,6 +13,11 @@ class AdminAuthController extends Controller
         return view('admin.index');
     }
 
+    public function dashboard()
+    {
+        return view('admin.Dashboard');
+    }
+
     public function showLoginForm()
     {
         return view('admin.pages.auth.login');

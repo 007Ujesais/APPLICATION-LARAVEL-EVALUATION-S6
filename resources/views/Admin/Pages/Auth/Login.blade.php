@@ -1,8 +1,6 @@
 @extends('admin.Layouts.GuestLayout')
 
-@section('title')
-    <title>Security Page Admin</title>
-@endsection
+@section('title', 'Security Page Admin')
 
 @section('content')
 <div class="bg-white dark:bg-gray-800 flex flex-col items-center w-80 text-center p-6 rounded-lg shadow-md">
