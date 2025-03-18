@@ -7,7 +7,7 @@ RUN apt-get update && apt-get install -y libpng-dev libjpeg-dev libfreetype6-dev
 # Étape 3: Installer Composer pour la gestion des dépendances PHP
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
-# Étape 4: Installer Node.js (nécessaire pour les dépendances JS de Laravel)
+# Étape 4: Installer Node.js (nécessaire pour Vite et Vue.js)
 RUN curl -sL https://deb.nodesource.com/setup_16.x | bash - && apt-get install -y nodejs
 
 # Étape 5: Définir le répertoire de travail de l'application
@@ -25,8 +25,11 @@ RUN composer install --no-dev --optimize-autoloader
 # Étape 9: Installer les dépendances JavaScript avec npm (avec --legacy-peer-deps)
 RUN npm install --legacy-peer-deps
 
-# Étape 10: Exposer le port sur lequel l'application va tourner
+# Étape 10: Compiler les assets frontend (Vite + Vue.js)
+RUN npm run build
+
+# Étape 11: Exposer le port sur lequel l'application va tourner
 EXPOSE 8000
 
-# Étape 11: Démarrer l'application Laravel avec php artisan serve
+# Étape 12: Démarrer l'application Laravel avec php artisan serve
 CMD php artisan serve --host=0.0.0.0 --port=$PORT
