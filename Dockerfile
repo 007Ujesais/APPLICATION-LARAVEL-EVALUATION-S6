@@ -1,5 +1,5 @@
 # Étape 1 : Utiliser l'image officielle PHP 8.2
-FROM php:8.2-fpm
+FROM php:8.2-cli
 
 # Étape 2 : Installer les dépendances nécessaires (comme les extensions PHP, Node.js, etc.)
 RUN apt-get update && apt-get install -y \
