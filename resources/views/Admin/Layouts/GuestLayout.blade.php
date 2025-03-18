@@ -9,7 +9,7 @@
 <body class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-dots bg-center selection:bg-gray-300 selection:text-black">
     <header class="p-4flex justify-between">
         <div class="w-20 h-20 flex sm:justify-center items-center fill-current">
-            <x-ApplicationLogo />
+            <x-application-logo />
             <h1 class="font-semibold">ADMIN</h1>
         </div>
     </header>

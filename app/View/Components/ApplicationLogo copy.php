@@ -23,6 +23,6 @@ class ApplicationLogo extends Component
      */
     public function render()
     {
-        return view('admin.components.ApplicationLogo');
+        return view('admin.components.applicationlogo');
     }
 }

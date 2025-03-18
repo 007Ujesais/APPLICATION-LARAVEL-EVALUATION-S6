@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Admin\CategoryCrudController;
+use App\Http\Controllers\Admin\ProductCrudController;
 use App\Http\Controllers\LikeController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
@@ -28,9 +30,10 @@ Route::get('/', function () {
     ]);
 });
 
-Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
+Route::middleware(['admin'])->prefix('admin')->group(function () {
     Route::get('/dashboard', [AdminAuthController::class, 'dashboard'])->name('dashboard');
-    Route::resource('products', \App\Http\Controllers\Admin\ProductController::class);
+    Route::resource('products', ProductCrudController::class);
+    Route::resource('categories', CategoryCrudController::class);
 });
 
 

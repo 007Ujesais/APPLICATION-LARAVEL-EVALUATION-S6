@@ -6,21 +6,16 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Product extends Model
+class Category extends Model
 {
     use HasFactory, SoftDeletes;
 
-    protected $fillable = ['name', 'model', 'price', 'category_id'];
+    protected $fillable = ['name'];
     protected $dates = ['deleted_at'];
     public $timestamps = true;
 
-    public function likes()
+    public function products()
     {
-        return $this->hasMany(Like::class, 'product_id');
-    }
-
-    public function categories()
-    {
-        return $this->belongsToMany(Category::class);
+        return $this->belongsToMany(Product::class);
     }
 }
