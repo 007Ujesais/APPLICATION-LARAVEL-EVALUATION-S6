@@ -1,7 +1,6 @@
 [build]
   builder = "nixpacks"
   buildCommand = "cd APP-LARAVEL/my-project && composer install && npm install --legacy-peer-deps && npm run dev"
-
 [start]
   command = "cd APP-LARAVEL/my-project && php artisan serve --host=0.0.0.0 --port=$PORT"
 
