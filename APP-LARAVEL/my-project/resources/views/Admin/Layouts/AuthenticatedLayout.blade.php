@@ -16,7 +16,7 @@
             <div class="fi-topbar sticky top-0 z-20 overflow-x-clip">
                 @include('admin.partials.header')
             </div>
-            <main class="fixed overflow-auto mx-auto h-full w-full px-4 md:px-6 lg:px-8 max-w-7xl">
+            <main class="fixed overflow-auto mx-auto h-full w-full px-4 md:px-6 lg:px-8 max-w-[88rem]">
                 <div>
                     <section class="flex h-[100000px] flex-col gap-y-8 py-8">
                         @yield('content')

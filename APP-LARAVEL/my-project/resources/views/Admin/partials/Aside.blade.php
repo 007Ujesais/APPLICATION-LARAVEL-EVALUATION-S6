@@ -91,7 +91,7 @@ $menuItems = [
 $menuItems = MenuHelper::updateMenu($menuItems);
 @endphp
 
-<aside class="fixed inset-y-0 start-0 z-30 flex flex-col h-screen content-start bg-white transition-all dark:bg-gray-900 lg:z-0 lg:bg-transparent lg:shadow-none lg:ring-0 lg:transition-none dark:lg:bg-transparent lg:translate-x-0 rtl:lg:-translate-x-0 fi-main-sidebar w-80 -translate-x-full rtl:translate-x-full lg:sticky">
+<aside class="fixed inset-y-0 start-0 z-30 flex flex-col h-screen content-start bg-white transition-all dark:bg-gray-900 lg:z-0 lg:bg-transparent lg:shadow-none lg:ring-0 lg:transition-none dark:lg:bg-transparent lg:translate-x-0 rtl:lg:-translate-x-0 fi-main-sidebar w-72 -translate-x-full rtl:translate-x-full lg:sticky">
     <div class="overflow-x-clip">
         <header class="sticky top-0 z-50 flex w-full border-b border-gray-200 bg-white dark:border-gray-800 dark:bg-gray-900">
             <div class="flex w-full items-center justify-between px-4 py-4">
