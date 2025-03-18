@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\CategoryCrudController;
 use App\Http\Controllers\Admin\ProductCrudController;
 use App\Http\Controllers\LikeController;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Auth\AdminAuthController;
