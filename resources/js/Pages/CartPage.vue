@@ -5,21 +5,21 @@ import { ref, defineProps } from 'vue';
 
 // Props venant du contrôleur
 const props = defineProps({
-    cardProducts: Array,
+    cartProducts: Array,
 });
 
 // Convertir les produits en un tableau réactif
-const cardProducts = ref([...props.cardProducts]);
+const cartProducts = ref([...props.cartProducts]);
 
 // Fonction pour supprimer un produit du panier
-const addCard = (productId) => {
-    router.post('/card', { product_id: productId }, {
+const addCart = (productId) => {
+    router.post('/cart', { product_id: productId }, {
         preserveScroll: true,
         onSuccess: () => {
-            if (cardProducts.value.has(productId)) {
-                cardProducts.value.delete(productId);
+            if (cartProducts.value.has(productId)) {
+                cartProducts.value.delete(productId);
             } else {
-                cardProducts.value.add(productId);
+                cartProducts.value.add(productId);
             }
         },
         onError: (error) => {
@@ -29,10 +29,10 @@ const addCard = (productId) => {
 };
 // Fonction pour mettre à jour la quantité d'un produit
 const updateQuantity = (productId, quantity) => {
-    router.post('/card/update-quantity', { product_id: productId, quantity }, {
+    router.post('/cart/update-quantity', { product_id: productId, quantity }, {
         preserveScroll: true,
         onSuccess: () => {
-            const product = cardProducts.value.find(p => p.id === productId);
+            const product = cartProducts.value.find(p => p.id === productId);
             if (product) {
                 product.quantity = quantity;
             }
@@ -56,8 +56,8 @@ const updateQuantity = (productId, quantity) => {
                 <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                     <div class="p-6 text-gray-900">
                         <h3 class="text-lg font-bold">Liste des produits</h3>
-                        <ul v-if="cardProducts.length">
-                            <li v-for="product in cardProducts" :key="product.id" class="mb-4">
+                        <ul v-if="cartProducts.length">
+                            <li v-for="product in cartProducts" :key="product.id" class="mb-4">
                                 <strong>{{ product.name }}</strong> - {{ product.price }}€ (Modèle: {{ product.model }})
                                 <div class="flex items-center mt-2">
                                     <label for="quantity" class="mr-2">Quantité :</label>
@@ -70,7 +70,7 @@ const updateQuantity = (productId, quantity) => {
                                     />
 
                                     <button
-                                        @click="addCard(product.id)"
+                                        @click="addCart(product.id)"
                                         class="ml-2 p-1 border rounded"
                                     >
                                         Remove

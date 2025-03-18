@@ -7,12 +7,12 @@ import { ref, defineProps } from 'vue';
 const props = defineProps({
     likedProducts: Array,
     products: Array,
-    userCards: Array
+    userCarts: Array
 });
 
 // Convertir les produits en un tableau réactif
 const likedProducts = ref([...props.likedProducts]);
-const cardProducts = ref(new Set(props.userCards));
+const cartProducts = ref(new Set(props.userCarts));
 // Fonction pour liker/unliker un produit
 const toggleLike = (productId) => {
     router.post('/like', { product_id: productId }, {
@@ -33,14 +33,14 @@ const toggleLike = (productId) => {
         }
     });
 };
-const addCard = (productId) => {
-    router.post('/card', { product_id: productId }, {
+const addCart = (productId) => {
+    router.post('/cart', { product_id: productId }, {
         preserveScroll: true,
         onSuccess: () => {
-            if (cardProducts.value.has(productId)) {
-                cardProducts.value.delete(productId);
+            if (cartProducts.value.has(productId)) {
+                cartProducts.value.delete(productId);
             } else {
-                cardProducts.value.add(productId);
+                cartProducts.value.add(productId);
             }
         },
         onError: (error) => {
@@ -65,8 +65,8 @@ const addCard = (productId) => {
                         <ul v-if="likedProducts.length">
                             <li v-for="product in likedProducts" :key="product.id">
                                 <strong>{{ product.name }}</strong> - {{ product.price }}€ (Modèle: {{ product.model }})
-                                <button @click="addCard(product.id)" class="ml-2 p-1 border rounded">
-                                {{ cardProducts.has(product.id) ? 'Remove' : 'Add to cart' }}
+                                <button @click="addCart(product.id)" class="ml-2 p-1 border rounded">
+                                {{ cartProducts.has(product.id) ? 'Remove' : 'Add to cart' }}
                             </button>
                                 <button @click="toggleLike(product.id)" class="ml-2 text-red-500">
                                     Unlike
