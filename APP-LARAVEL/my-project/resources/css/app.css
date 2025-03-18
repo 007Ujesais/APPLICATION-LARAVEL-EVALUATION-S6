@@ -16,7 +16,7 @@ body {
 }
 
 .bg-dots::before {
-    opacity: 0.27;
+    opacity: 0.2;
     content: "";
     position: absolute;
     top: 0;

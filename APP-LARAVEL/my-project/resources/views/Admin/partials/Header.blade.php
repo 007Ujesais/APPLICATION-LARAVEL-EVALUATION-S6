@@ -7,14 +7,14 @@
 
         <!-- Logo -->
         <div class="w-10 h-10 flex sm:justify-center items-center fill-current">
-            <x-ApplicationLogo />
+            {{-- <x-ApplicationLogo /> --}}
         </div>
 
         <!-- Boutons -->
         <div class="flex items-center gap-4">
 
           <!-- Shearch Menu Area -->
-          <div class=" bg-gray-300 dark:bg-slate-950 flex items-center content-center justify-center rounded-lg pl-3">
+          <div class=" bg-gray-100 dark:bg-slate-950 flex items-center content-center justify-center rounded-lg pl-3">
             <div class="w-7 shrink-0">
                 <!-- Icône de recherche -->
                 <i class="pi pi-search" aria-hidden="true"></i>
@@ -27,7 +27,7 @@
 
           <!-- Notification Menu Area -->
           <div id="notification-btn" class="relative">
-            <button class="hover:text-dark-900 relative flex h-10 w-10 items-center justify-center rounded-full border border-gray-200 bg-white text-gray-500 transition-colors hover:bg-gray-100 hover:text-gray-700 dark:border-gray-800 dark:bg-gray-900 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-white" @click.prevent="dropdownOpen = ! dropdownOpen; notifying = false">
+            <button class="hover:text-dark-900 relative flex h-10 w-10 items-center justify-center rounded-full border border-gray-200 bg-gray-100 text-gray-500 transition-colors hover:bg-gray-100 hover:text-gray-700 dark:border-gray-800 dark:bg-slate-950 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-white" @click.prevent="dropdownOpen = ! dropdownOpen; notifying = false">
               <span :class="!notifying ? 'hidden' : 'flex'" class="absolute right-0 top-0.5 z-1 h-2 w-2 rounded-full bg-orange-400 flex">
                 <span class="absolute -z-1 inline-flex h-full w-full animate-ping rounded-full bg-orange-400 opacity-75"></span>
               </span>
@@ -39,7 +39,7 @@
             <!-- Profil -->
             <div class="relative">
                 <button id="profile-btn" class="gap-2 p-2 rounded-lg text-gray-700 dark:text-gray-400">
-                    <span class="hover:text-dark-900 relative flex h-10 w-10 items-center justify-center rounded-full border border-gray-200 bg-white text-gray-500 transition-colors hover:bg-gray-100 hover:text-gray-700 dark:border-gray-800 dark:bg-gray-900 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-white">AD</span>
+                    <span class="hover:text-dark-900 relative flex h-10 w-10 items-center justify-center rounded-full border border-gray-200 bg-gray-100 text-gray-500 transition-colors hover:bg-gray-100 hover:text-gray-700 dark:border-gray-800 dark:bg-gray-950 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-white">AD</span>
                 </button>
                 
                 <!-- Profil Menu Déroulant -->

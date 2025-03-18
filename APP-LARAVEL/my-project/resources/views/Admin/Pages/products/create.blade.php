@@ -1,8 +1,8 @@
-@extends('admin.Layouts.AuthenticatedLayout')
+@extends('admin.Layouts.Elements.ElementLayout')
+@section('title', 'Edit ' . ($product->name ?? 'Product'))
+@section('element.active', 'products') 
 
-@section('title', 'Create product')
-
-@section('content')
+@section('element')
     <h1>{{ isset($product) ? 'Modifier' : 'Ajouter' }} un produit</h1>
     <form action="{{ isset($product) ? route('products.update', $product) : route('products.store') }}" method="POST">
         @csrf

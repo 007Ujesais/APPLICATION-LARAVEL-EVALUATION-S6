@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
-class ProductController extends Controller
+class ProductCrudController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -55,8 +55,12 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        //
+        // Récupérer toutes les catégories associées au produit
+        $categories = $product->categories;
+    
+        return view('admin.pages.products.show', compact('product', 'categories'));
     }
+    
 
     /**
      * Show the form for editing the specified resource.
@@ -73,7 +77,7 @@ class ProductController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Product  $product
+     * @param  \App\Models\Product  $product 
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Product $product)
