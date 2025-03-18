@@ -2,7 +2,7 @@
 FROM php:8.1-fpm
 
 # Étape 2: Installer les dépendances nécessaires (librairies PHP et Node.js)
-RUN apt-get update && apt-get install -y libpng-dev libjpeg-dev libfreetype6-dev zip git npm
+RUN apt-get update && apt-get install -y libpng-dev libjpeg-dev libfreetype6-dev zip git npm libpq-dev
 
 # Étape 3: Installer Composer pour la gestion des dépendances PHP
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
@@ -20,7 +20,8 @@ COPY . /app
 WORKDIR /app/APP-LARAVEL/my-project
 
 # Étape 8: Installer les dépendances PHP avec Composer
-RUN composer install --no-dev --optimize-autoloader
+RUN composer clear-cache
+RUN composer install --no-dev --optimize-autoloader --verbose
 
 # Étape 9: Installer les dépendances JavaScript avec npm (avec --legacy-peer-deps)
 RUN npm install --legacy-peer-deps
