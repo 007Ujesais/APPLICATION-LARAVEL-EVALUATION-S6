@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cart;
 use App\Models\Product;
 use App\Models\Like;
 use Illuminate\Http\Request;
@@ -18,7 +19,7 @@ class ProductController extends Controller
     {
         $products = Product::all();
         $userLikes = Like::where('user_id', auth()->id())->pluck('product_id');
-        $userCarts = Card::where('user_id', auth()->id())->pluck('product_id');
+        $userCarts = Cart::where('user_id', auth()->id())->pluck('product_id');
 
         return Inertia::render('Home', [
             'products' => $products,
