@@ -44,20 +44,20 @@ const userMenu = ref([
                             </template>
                             <template #end>
                                 <div class="flex items-center gap-1">
-                                    <Button 
-                                        :icon="'pi pi-heart'" 
+                                    <Button
+                                        :icon="'pi pi-heart'"
                                         class="p-button-rounded p-button-text"
                                         severity="contrast"
                                         @click="router.visit(route('like.show'))"
                                     />
-                                    <Button 
-                                        :icon="'pi pi-shopping-bag'" 
+                                    <Button
+                                        :icon="'pi pi-shopping-bag'"
                                         class="p-button-rounded p-button-text"
                                         severity="contrast"
-                                        @click="null"
+                                        @click="router.visit(route('cart.show'))"
                                     />
                                     <SplitButton
-                                        :label="$page.props.auth.user.name" 
+                                        :label="$page.props.auth.user.name"
                                         :model="userMenu"
                                         @click="router.visit(route('profile.edit'))"
                                         severity="contrast"

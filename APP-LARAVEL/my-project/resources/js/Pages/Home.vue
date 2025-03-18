@@ -8,11 +8,11 @@ import { router } from '@inertiajs/vue3';
 const props = defineProps({
     products: Array,
     userLikes: Array,
-    userCards: Array
+    userCarts: Array
 });
 
 const likedProducts = ref(new Set(props.userLikes));
-const cardProducts = ref(new Set(props.userCards));
+const cartProducts = ref(new Set(props.userCarts));
 
 const searchQuery = ref('');
 
@@ -37,14 +37,14 @@ const toggleLike = (productId) => {
         }
     });
 };
-const addCard = (productId) => {
-    router.post('/card', { product_id: productId }, {
+const addCart = (productId) => {
+    router.post('/cart', { product_id: productId }, {
         preserveScroll: true,
         onSuccess: () => {
-            if (cardProducts.value.has(productId)) {
-                cardProducts.value.delete(productId);
+            if (cartProducts.value.has(productId)) {
+                cartProducts.value.delete(productId);
             } else {
-                cardProducts.value.add(productId);
+                cartProducts.value.add(productId);
             }
         },
         onError: (error) => {
@@ -94,12 +94,12 @@ const visible = ref(false);
                             </Button>
 
                             <Button
-                            :icon="cardProducts.has(product.id)  ? 'pi pi-shopping-bag-fill' : 'pi pi-shopping-bag'"
-                            :label="cardProducts.has(product.id) ? 'Remove' : 'Add to cart'"
+                            :icon="cartProducts.has(product.id)  ? 'pi pi-shopping-bag-fill' : 'pi pi-shopping-bag'"
+                            :label="cartProducts.has(product.id) ? 'Remove' : 'Add to cart'"
                             variant="text"
-                            @click="addCard(product.id)"
+                            @click="addCart(product.id)"
                             class="ml-2 p-1 border rounded"
-                            :class="{ 'text-red-500': cardProducts.has(product.id)  }">
+                            :class="{ 'text-red-500': cartProducts.has(product.id)  }">
                             </Button>
 
                             <Button
