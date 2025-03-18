@@ -91,7 +91,7 @@ $menuItems = [
 $menuItems = MenuHelper::updateMenu($menuItems);
 @endphp
 
-<aside class="fi-sidebar fixed inset-y-0 start-0 z-30 flex flex-col h-screen content-start bg-white transition-all dark:bg-gray-900 lg:z-0 lg:bg-transparent lg:shadow-none lg:ring-0 lg:transition-none dark:lg:bg-transparent lg:translate-x-0 rtl:lg:-translate-x-0 fi-main-sidebar w-60 -translate-x-full rtl:translate-x-full lg:sticky">
+<aside class="fixed inset-y-0 start-0 z-30 flex flex-col h-screen content-start bg-white transition-all dark:bg-gray-900 lg:z-0 lg:bg-transparent lg:shadow-none lg:ring-0 lg:transition-none dark:lg:bg-transparent lg:translate-x-0 rtl:lg:-translate-x-0 fi-main-sidebar w-80 -translate-x-full rtl:translate-x-full lg:sticky">
     <div class="overflow-x-clip">
         <header class="sticky top-0 z-50 flex w-full border-b border-gray-200 bg-white dark:border-gray-800 dark:bg-gray-900">
             <div class="flex w-full items-center justify-between px-4 py-4">
@@ -102,11 +102,11 @@ $menuItems = MenuHelper::updateMenu($menuItems);
             </div>
         </header>
     </div>
-    <nav class="fi-sidebar-nav flex-grow flex flex-col gap-y-7 overflow-y-auto overflow-x-hidden px-6 py-8">
-        <ul class="fi-sidebar-nav-groups -mx-2 flex flex-col gap-y-7">
+    <nav class="flex-grow flex flex-col gap-y-7 overflow-y-auto overflow-x-hidden px-6 py-8">
+        <ul class=" -mx-2 flex flex-col gap-y-7">
             @foreach ($menuItems as $item)
-                <li class="fi-sidebar-group flex flex-col gap-y-1">
-                    <ul class="fi-sidebar-group-items flex flex-col gap-y-1">
+                <li class="flex flex-col gap-y-1">
+                    <ul class="flex flex-col gap-y-1">
                             @if (isset($item['route']))
                                 <x-ItemButton :menu="$item" />
                             @endif
