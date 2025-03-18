@@ -18,9 +18,12 @@ class ProductController extends Controller
     {
         $products = Product::all();
         $userLikes = Like::where('user_id', auth()->id())->pluck('product_id');
+        $userCarts = Card::where('user_id', auth()->id())->pluck('product_id');
+
         return Inertia::render('Home', [
             'products' => $products,
-            'userLikes' => $userLikes
+            'userLikes' => $userLikes,
+            'userCarts' => $userCarts
         ]);
         //
     }
