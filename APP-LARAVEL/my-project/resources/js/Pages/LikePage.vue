@@ -5,12 +5,14 @@ import { ref, defineProps } from 'vue';
 
 // Props venant du contrôleur
 const props = defineProps({
-    likedProducts: Array
+    likedProducts: Array,
+    products: Array,
+    userCards: Array
 });
 
 // Convertir les produits en un tableau réactif
 const likedProducts = ref([...props.likedProducts]);
-
+const cardProducts = ref(new Set(props.userCards));
 // Fonction pour liker/unliker un produit
 const toggleLike = (productId) => {
     router.post('/like', { product_id: productId }, {
@@ -31,6 +33,21 @@ const toggleLike = (productId) => {
         }
     });
 };
+const addCard = (productId) => {
+    router.post('/card', { product_id: productId }, {
+        preserveScroll: true,
+        onSuccess: () => {
+            if (cardProducts.value.has(productId)) {
+                cardProducts.value.delete(productId);
+            } else {
+                cardProducts.value.add(productId);
+            }
+        },
+        onError: (error) => {
+            console.error('Erreur lors du ajout au panier', error);
+        }
+    });
+};
 </script>
 
 <template>
@@ -48,9 +65,13 @@ const toggleLike = (productId) => {
                         <ul v-if="likedProducts.length">
                             <li v-for="product in likedProducts" :key="product.id">
                                 <strong>{{ product.name }}</strong> - {{ product.price }}€ (Modèle: {{ product.model }})
+                                <button @click="addCard(product.id)" class="ml-2 p-1 border rounded">
+                                {{ cardProducts.has(product.id) ? 'Remove' : 'Add to cart' }}
+                            </button>
                                 <button @click="toggleLike(product.id)" class="ml-2 text-red-500">
                                     Unlike
                                 </button>
+
                             </li>
                         </ul>
                         <p v-else class="text-gray-500">Aucun produit liké pour le moment.</p>
