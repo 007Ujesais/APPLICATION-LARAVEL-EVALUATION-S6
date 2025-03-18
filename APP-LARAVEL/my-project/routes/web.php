@@ -37,11 +37,15 @@ Route::middleware(['admin'])->prefix('admin')->group(function () {
 });
 
 
-Route::middleware('auth', 'verified')->group(function () { 
+Route::middleware('auth', 'verified')->group(function () {
     Route::get('/home', [ProductController::class, 'index'])->name('home');
 
     Route::post('/like', [LikeController::class, 'like'])->name('like.update');
     Route::get('/like', [LikeController::class, 'showLikedProduct'])->name('like.show');
+
+    Route::post('/card', [CardController::class, 'card'])->name('card.update');
+    Route::get('/card', [CardController::class, 'showMyCard'])->name('card.show');
+    Route::post('/card/update-quantity', [CardController::class, 'updateQuantity'])->name('card.update-quantity');
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
