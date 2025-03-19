@@ -38,4 +38,4 @@ RUN npm run dev
 EXPOSE 9000
 
 # Étape 11 : Lancer PHP-FPM
-CMD ["php-fpm"]
+CMD ["php", "artisan", "serve"]
