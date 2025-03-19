@@ -62,6 +62,7 @@ const addCart = (productId) => {
                 <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                     <div class="p-6 text-gray-900">
                         <h3 class="text-lg font-bold">Produits Likés</h3>
+                        
                         <ul v-if="likedProducts.length">
                             <li v-for="product in likedProducts" :key="product.id">
                                 <strong>{{ product.name }}</strong> - {{ product.price }}€ (Modèle: {{ product.model }})
